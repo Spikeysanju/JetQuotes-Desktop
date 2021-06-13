@@ -1,6 +1,7 @@
 package components
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -20,9 +21,12 @@ import model.QuoteItem
 import ui.typography
 
 @Composable
-fun QuoteItemCard(quote: QuoteItem) {
+fun QuoteItemCard(quote: QuoteItem, onClick: () -> Unit) {
     Box(
         modifier = Modifier.fillMaxWidth().wrapContentHeight().background(MaterialTheme.colors.primaryVariant)
+            .clickable {
+                onClick()
+            }
             .padding(start = 24.dp, top = 16.dp, end = 0.dp, bottom = 16.dp)
     ) {
 

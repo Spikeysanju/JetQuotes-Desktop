@@ -17,6 +17,7 @@ import components.QuoteItemCard
 import repo.MainViewModel
 import ui.JetQuotesTheme
 import utils.ViewState
+import utils.copyToClipboard
 
 fun main() = Window {
     JetQuotesTheme(darkTheme = false) {
@@ -52,7 +53,13 @@ fun QuotesList() {
         is ViewState.Success -> {
             LazyColumn(state = listState, contentPadding = PaddingValues(start = 40.dp)) {
                 items(result.quote) {
-                    QuoteItemCard(it)
+                    QuoteItemCard(it, onClick = {
+                        copyToClipboard(
+                            it.quoteText
+                                .plus("")
+                                .plus("- ${it.quoteAuthor}")
+                        )
+                    })
                 }
             }
         }

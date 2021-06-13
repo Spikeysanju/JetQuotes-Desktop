@@ -1,13 +1,13 @@
-package view.ui
+package ui
 
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
-import view.ui.AppColor.black
-import view.ui.AppColor.paleBlack
-import view.ui.AppColor.paleWhite
-import view.ui.AppColor.white
+import ui.AppColor.black
+import ui.AppColor.paleBlack
+import ui.AppColor.paleWhite
+import ui.AppColor.white
 
 private val DarkColorPalette = darkColors(
     primary = black,

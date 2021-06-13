@@ -6,10 +6,10 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
-import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.rememberScrollbarAdapter
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
@@ -18,10 +18,12 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import components.QuoteItemCard
 import repo.MainViewModel
 import ui.JetQuotesTheme
+import ui.typography
 import utils.ViewState
 import utils.copyToClipboard
 
@@ -60,14 +62,23 @@ fun QuotesList() {
         is ViewState.Success -> {
 
             Box {
-
                 val quoteListState = rememberLazyListState()
-                val scrollState = rememberScrollState(0)
                 LazyColumn(
                     state = quoteListState,
                     modifier = Modifier.fillMaxSize(),
                     contentPadding = PaddingValues(start = 40.dp)
                 ) {
+
+                    item {
+                        Text(
+                            "JetQuotes",
+                            style = typography.h4,
+                            textAlign = TextAlign.Start,
+                            color = MaterialTheme.colors.onPrimary,
+                            modifier = Modifier.padding(top = 24.dp, bottom = 24.dp)
+                        )
+                    }
+
                     items(result.quote) {
                         QuoteItemCard(it, onClick = {
                             copyToClipboard(

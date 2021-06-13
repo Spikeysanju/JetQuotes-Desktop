@@ -19,7 +19,10 @@ repositories {
 
 dependencies {
     implementation(compose.desktop.currentOs)
+    // Kotlin Serialization
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.2.1")
+    // Coroutines
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.3")
 }
 
 tasks.withType<KotlinCompile> {

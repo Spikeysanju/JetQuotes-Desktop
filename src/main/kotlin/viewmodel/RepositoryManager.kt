@@ -1,4 +1,4 @@
-package repo
+package viewmodel
 
 import kotlinx.coroutines.flow.Flow
 import model.QuoteItem

@@ -37,13 +37,12 @@ fun QuoteItemCard(quote: QuoteItem, onClick: () -> Unit) {
                 quote.quoteText,
                 textAlign = TextAlign.Start,
                 style = typography.subtitle1,
-                maxLines = 1,
                 overflow = TextOverflow.Ellipsis,
                 color = MaterialTheme.colors.onPrimary
             )
             Spacer(modifier = Modifier.height(12.dp))
             Text(
-                "- ".plus(quote.quoteAuthor.ifBlank { "- Unknown" }),
+                "- ".plus(quote.quoteAuthor.ifBlank { "Unknown" }),
                 textAlign = TextAlign.Start,
                 style = typography.caption,
                 color = MaterialTheme.colors.onPrimary.copy(0.6F)

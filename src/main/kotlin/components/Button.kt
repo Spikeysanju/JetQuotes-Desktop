@@ -21,10 +21,10 @@ import androidx.compose.ui.res.vectorXmlResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import model.QuoteItem
-import repo.MainViewModel
 import ui.R
 import ui.typography
 import utils.copyToClipboard
+import viewmodel.MainViewModel
 
 @Composable
 fun PrimaryButton(icon: ImageVector, name: String, contentDescription: String, onClick: () -> Unit) {

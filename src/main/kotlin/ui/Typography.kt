@@ -74,7 +74,7 @@ val typography = Typography(
     ),
     caption = TextStyle(
         fontFamily = futura,
-        fontWeight = FontWeight.Normal,
+        fontWeight = FontWeight.Light,
         fontSize = 12.sp
     ),
     overline = TextStyle(

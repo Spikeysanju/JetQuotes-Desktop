@@ -27,14 +27,13 @@ import ui.typography
 import utils.ViewState
 import utils.copyToClipboard
 
-fun main() = Window {
+fun main() = Window(title = "JetQuotes", resizable = false) {
     JetQuotesTheme(darkTheme = false) {
         Box(modifier = Modifier.fillMaxSize().background(MaterialTheme.colors.primary)) {
             QuotesList()
         }
     }
 }
-
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
@@ -62,9 +61,8 @@ fun QuotesList() {
         is ViewState.Success -> {
 
             Box {
-                val quoteListState = rememberLazyListState()
                 LazyColumn(
-                    state = quoteListState,
+                    state = listState,
                     modifier = Modifier.fillMaxSize(),
                     contentPadding = PaddingValues(start = 40.dp)
                 ) {
@@ -93,7 +91,7 @@ fun QuotesList() {
                 VerticalScrollbar(
                     modifier = Modifier.align(Alignment.CenterEnd).fillMaxHeight(),
                     adapter = rememberScrollbarAdapter(
-                        quoteListState,
+                        listState,
                         result.quote.size,
                         12.dp
                     )

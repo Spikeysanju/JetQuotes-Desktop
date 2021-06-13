@@ -23,6 +23,8 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.2.1")
     // Coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.3")
+    testImplementation(compose("org.jetbrains.compose.ui:ui-test-junit4"))
+
 }
 
 tasks.withType<KotlinCompile> {

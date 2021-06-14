@@ -24,6 +24,13 @@ class MainViewModel {
     }
 
     /**
+     * To tell viewModel about empty search
+     */
+    fun emptySearch() = viewModelScope.launch(Dispatchers.IO) {
+        _uiState.value = ViewState.Empty
+    }
+
+    /**
      * To get all quotes from Json
      */
     fun getAllQuotes() = viewModelScope.launch(Dispatchers.IO) {

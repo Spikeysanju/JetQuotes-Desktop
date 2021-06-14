@@ -22,6 +22,11 @@ object R {
         const val UNKNOWN_AUTHOR = "Unknown"
         const val QUOTATION = "“"
         const val HYPHEN = "- "
+        const val EMPTY_TITLE = "Your wish list is empty!"
+        const val EMPTY_DESCRIPTION = "Explore more and add some quotes!"
+        const val BACK_TO_HOME = "Back to home"
+        const val EMPTY_STATE = "Empty"
+
 
     }
 }

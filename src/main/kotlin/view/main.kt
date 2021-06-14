@@ -22,8 +22,10 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.imageResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import components.EmptyState
 import components.InputTextField
 import components.QuoteItemCard
 import ui.JetQuotesTheme
@@ -32,8 +34,10 @@ import ui.typography
 import utils.ViewState
 import utils.copyToClipboard
 import viewmodel.MainViewModel
+import java.awt.image.BufferedImage
+import javax.imageio.ImageIO
 
-fun main() = Window(title = R.string.APP_NAME, resizable = true) {
+fun main() = Window(title = R.string.APP_NAME, resizable = true, icon = getAppIcon()) {
     JetQuotesTheme(darkTheme = false) {
         Box(modifier = Modifier.fillMaxSize().background(MaterialTheme.colors.primary)) {
             QuotesList()
@@ -55,15 +59,25 @@ fun QuotesList() {
 
     when (val result = viewModel.uiState.collectAsState().value) {
         ViewState.Empty -> {
-            Text("Empty Quotes")
 
+            EmptyState(
+                onActionClick = {
+                    // go back to home
+                },
+                title = R.string.EMPTY_TITLE,
+                description = R.string.EMPTY_DESCRIPTION,
+                image = imageResource("drawable/empty_state.png"),
+                actionName = R.string.BACK_TO_HOME
+            )
         }
         is ViewState.Error -> {
-            Text("Error ${result.exception}")
+
+            Text("Error", color = MaterialTheme.colors.onPrimary)
 
         }
         ViewState.Loading -> {
-            Text("Quotes Loading")
+            Text("Loading", color = MaterialTheme.colors.onPrimary)
+
         }
         is ViewState.Success -> {
             Box {
@@ -89,7 +103,6 @@ fun QuotesList() {
                         })
                     }
 
-
                     items(result.quote.filter {
 
                         // Filter search by Quote or Author
@@ -98,6 +111,7 @@ fun QuotesList() {
                             ignoreCase = true
                         ) || it.quoteAuthor.contains(search.value, ignoreCase = true)
                     }) {
+
                         Spacer(modifier = Modifier.height(24.dp))
                         QuoteItemCard(it, onClick = {
                             copyToClipboard(
@@ -121,4 +135,8 @@ fun QuotesList() {
 
         }
     }
+}
+
+private fun getAppIcon(): BufferedImage {
+    return ImageIO.read(MainViewModel::class.java.classLoader.getResourceAsStream("drawable/ic_jetquotes_logo.png"))
 }

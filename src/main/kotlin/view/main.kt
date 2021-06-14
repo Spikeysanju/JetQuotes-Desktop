@@ -84,7 +84,7 @@ fun QuotesList() {
                     }
 
                     item {
-                        InputTextField("Search", search.value, onValueChanged = {
+                        InputTextField(R.string.SEARCH, search.value, onValueChanged = {
                             search.value = it
                         })
                     }

@@ -16,5 +16,10 @@ object R {
         const val FAVOURITES = "Favourites"
         const val COPY_TO_CLIPBOARD = "Copy to Clipboard"
         const val SHARE = "Share"
+        const val SEARCH = "Search"
+        const val UNKNOWN_AUTHOR = "Unknown"
+        const val QUOTATION = "“"
+        const val HYPHEN = "- "
+
     }
 }

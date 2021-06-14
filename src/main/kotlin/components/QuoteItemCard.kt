@@ -18,6 +18,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import model.QuoteItem
+import ui.R
 import ui.typography
 
 @Composable
@@ -31,8 +32,17 @@ fun QuoteItemCard(quote: QuoteItem, onClick: () -> Unit) {
     ) {
 
         Column(modifier = Modifier.fillMaxWidth().wrapContentHeight(), horizontalAlignment = Alignment.Start) {
-            Text("“", textAlign = TextAlign.Start, style = typography.h3, color = MaterialTheme.colors.onPrimary)
+
+            // hyphen symbol
+            Text(
+                R.string.QUOTATION,
+                textAlign = TextAlign.Start,
+                style = typography.h3,
+                color = MaterialTheme.colors.onPrimary
+            )
             Spacer(modifier = Modifier.height(8.dp))
+
+            // quote
             Text(
                 quote.quoteText,
                 textAlign = TextAlign.Start,
@@ -41,8 +51,10 @@ fun QuoteItemCard(quote: QuoteItem, onClick: () -> Unit) {
                 color = MaterialTheme.colors.onPrimary
             )
             Spacer(modifier = Modifier.height(12.dp))
+
+            // author
             Text(
-                "- ".plus(quote.quoteAuthor.ifBlank { "Unknown" }),
+                R.string.HYPHEN.plus(quote.quoteAuthor.ifBlank { R.string.UNKNOWN_AUTHOR }),
                 textAlign = TextAlign.Start,
                 style = typography.caption,
                 color = MaterialTheme.colors.onPrimary.copy(0.6F)

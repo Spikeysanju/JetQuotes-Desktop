@@ -2,17 +2,16 @@ package components
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.text.KeyboardActions
-import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme.colors
 import androidx.compose.material.OutlinedTextField
 import androidx.compose.material.Text
 import androidx.compose.material.TextFieldDefaults
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.sharp.Search
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalSoftwareKeyboardController
-import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import ui.typography
@@ -31,8 +30,6 @@ fun LabelView(title: String) {
 @ExperimentalComposeUiApi
 @Composable
 fun InputTextField(title: String, value: String, onValueChanged: (String) -> Unit) {
-    val keyboardController = LocalSoftwareKeyboardController.current
-
     OutlinedTextField(
         modifier = Modifier
             .fillMaxWidth()
@@ -41,16 +38,13 @@ fun InputTextField(title: String, value: String, onValueChanged: (String) -> Uni
         onValueChange = {
             onValueChanged(it)
         },
-
+        singleLine = true,
         label = { LabelView(title = title) },
         textStyle = typography.body1,
         colors = textFieldColors(),
-        keyboardOptions = KeyboardOptions(imeAction = ImeAction.Done),
-        keyboardActions = KeyboardActions(
-            onDone = {
-                keyboardController?.hideSoftwareKeyboard()
-            }
-        )
+        leadingIcon = {
+            Icon(imageVector = Icons.Sharp.Search, contentDescription = "Search Icon")
+        }
     )
 
 }
@@ -64,5 +58,7 @@ fun textFieldColors() = TextFieldDefaults.textFieldColors(
     unfocusedIndicatorColor = colors.onPrimary.copy(.5F),
     cursorColor = colors.onPrimary,
     placeholderColor = colors.onPrimary,
-    disabledPlaceholderColor = colors.onPrimary.copy(.5F)
+    disabledPlaceholderColor = colors.onPrimary.copy(.5F),
+    leadingIconColor = colors.onPrimary,
+    disabledLeadingIconColor = colors.onPrimary.copy(.5F),
 )

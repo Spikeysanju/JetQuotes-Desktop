@@ -33,7 +33,7 @@ import utils.ViewState
 import utils.copyToClipboard
 import viewmodel.MainViewModel
 
-fun main() = Window(title = "JetQuotes", resizable = true) {
+fun main() = Window(title = R.string.APP_NAME, resizable = true) {
     JetQuotesTheme(darkTheme = false) {
         Box(modifier = Modifier.fillMaxSize().background(MaterialTheme.colors.primary)) {
             QuotesList()
@@ -66,7 +66,6 @@ fun QuotesList() {
             Text("Quotes Loading")
         }
         is ViewState.Success -> {
-            val searchedText = viewModel.search.value
             Box {
                 LazyColumn(
                     state = listState,
@@ -91,7 +90,14 @@ fun QuotesList() {
                     }
 
 
-                    items(result.quote) {
+                    items(result.quote.filter {
+
+                        // Filter search by Quote or Author
+                        it.quoteText.contains(
+                            search.value,
+                            ignoreCase = true
+                        ) || it.quoteAuthor.contains(search.value, ignoreCase = true)
+                    }) {
                         Spacer(modifier = Modifier.height(24.dp))
                         QuoteItemCard(it, onClick = {
                             copyToClipboard(

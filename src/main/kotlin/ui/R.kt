@@ -9,6 +9,8 @@ object R {
         val paleWhite = Color(0xfff9f9f9)
         val paleBlack = Color(0xff222325)
         val red = Color(0xFFEB5757)
+        val activeLight = Color(0xFFEEEEEE)
+        val activeDark = Color(0xFF424448)
     }
 
     object string {

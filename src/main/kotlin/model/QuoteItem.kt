@@ -3,7 +3,7 @@ package model
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class EmojiItem(
+data class QuoteItem(
     val quoteAuthor: String,
     val quoteText: String
 )

@@ -2,6 +2,7 @@ package components
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.text.selection.SelectionContainer
 import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme.colors
 import androidx.compose.material.OutlinedTextField
@@ -18,12 +19,14 @@ import ui.typography
 
 @Composable
 fun LabelView(title: String) {
-    Text(
-        text = title,
-        style = typography.caption,
-        textAlign = TextAlign.Start,
-        color = colors.onPrimary
-    )
+    SelectionContainer {
+        Text(
+            text = title,
+            style = typography.caption,
+            textAlign = TextAlign.Start,
+            color = colors.onPrimary
+        )
+    }
 }
 
 

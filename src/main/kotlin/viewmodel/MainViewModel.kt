@@ -7,6 +7,7 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
+import org.jetbrains.skija.impl.Log
 import utils.ViewState
 import java.io.File
 
@@ -28,6 +29,7 @@ class MainViewModel {
      */
     fun emptySearch() = viewModelScope.launch(Dispatchers.IO) {
         _uiState.value = ViewState.Empty
+        Log.info("Empty search!")
     }
 
     /**
@@ -35,7 +37,7 @@ class MainViewModel {
      */
     fun getAllQuotes() = viewModelScope.launch(Dispatchers.IO) {
         /* filePath */
-        val quotes = "/Users/spikeysanju/JetQuotes/src/main/resources/assets/quotes.json"
+        val quotes = "/Users/spikey/IdeaProjects/JetQuotes-Desktop/src/main/resources/assets/quotes.json"
 
         /* reading json file */
         val quotesJson = File(quotes).readText()

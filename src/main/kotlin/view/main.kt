@@ -2,24 +2,14 @@ import androidx.compose.desktop.Window
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.VerticalScrollbar
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxHeight
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.rememberScrollbarAdapter
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.imageResource
@@ -27,6 +17,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import components.EmptyState
 import components.InputTextField
+import components.LoadingState
 import components.QuoteItemCard
 import ui.JetQuotesTheme
 import ui.R
@@ -63,6 +54,7 @@ fun QuotesList() {
             EmptyState(
                 onActionClick = {
                     // go back to home
+                    viewModel.getAllQuotes()
                 },
                 title = R.string.EMPTY_TITLE,
                 description = R.string.EMPTY_DESCRIPTION,
@@ -71,13 +63,10 @@ fun QuotesList() {
             )
         }
         is ViewState.Error -> {
-
             Text("Error", color = MaterialTheme.colors.onPrimary)
-
         }
         ViewState.Loading -> {
-            Text("Loading", color = MaterialTheme.colors.onPrimary)
-
+            LoadingState()
         }
         is ViewState.Success -> {
             Box {
@@ -87,6 +76,7 @@ fun QuotesList() {
                     contentPadding = PaddingValues(start = 40.dp)
                 ) {
 
+                    // application title
                     item {
                         Text(
                             R.string.APP_NAME,
@@ -97,12 +87,15 @@ fun QuotesList() {
                         )
                     }
 
+
+                    // Search input field
                     item {
                         InputTextField(R.string.SEARCH, search.value, onValueChanged = {
                             search.value = it
                         })
                     }
 
+                    // quotes list
                     items(result.quote.filter {
 
                         // Filter search by Quote or Author
@@ -111,7 +104,6 @@ fun QuotesList() {
                             ignoreCase = true
                         ) || it.quoteAuthor.contains(search.value, ignoreCase = true)
                     }) {
-
                         Spacer(modifier = Modifier.height(24.dp))
                         QuoteItemCard(it, onClick = {
                             copyToClipboard(
@@ -123,6 +115,7 @@ fun QuotesList() {
                     }
                 }
 
+                // vertical end scrollbar
                 VerticalScrollbar(
                     modifier = Modifier.align(Alignment.CenterEnd).fillMaxHeight(),
                     adapter = rememberScrollbarAdapter(

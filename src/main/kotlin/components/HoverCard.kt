@@ -2,18 +2,14 @@ package components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
+import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.pointer.pointerMoveFilter
 
 @Composable
 fun Modifier.addHoverEffect(
-    onClicked: () -> Unit,
+    onClicked: (Boolean) -> Unit,
     defaultColor: Color,
     onHoverColor: Color
 ): Modifier {
@@ -27,7 +23,7 @@ fun Modifier.addHoverEffect(
     return this
         .background(background)
         .clickable {
-            onClicked()
+            onClicked(onHover)
         }
         .pointerMoveFilter(
             onEnter = {

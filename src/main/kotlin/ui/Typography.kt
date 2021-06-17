@@ -13,8 +13,6 @@ val futura = FontFamily(
     Font("fonts/Jost-SemiBold.ttf", FontWeight.SemiBold),
 )
 
-//val typography = Typography(defaultFontFamily = futura)
-
 // Set of Material typography styles to start with
 val typography = Typography(
     h1 = TextStyle(

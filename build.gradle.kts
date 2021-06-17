@@ -12,7 +12,7 @@ group = "me.spikeysanju"
 version = "1.0"
 
 repositories {
-    jcenter()
+    google()
     mavenCentral()
     maven { url = uri("https://maven.pkg.jetbrains.space/public/p/compose/dev") }
 }

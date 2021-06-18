@@ -5,11 +5,24 @@
 A Quotes Application built to Demonstrate the use of Jetpack Compose for building declarative UI in
 Desktop. *Made with love ❤️ by [Spikeysanju](https://github.com/Spikeysanju)*
 
+<br />
+
+
 ***Try latest JetQuotes App from below 👇***
 
 [![JetQuotes](https://img.shields.io/badge/JetQuotes🔖-MacOS-black.svg?style=for-the-badge&logo=android)](https://github.com/Spikeysanju/JetQuotes/releases/download/v1.3.1/jetquotes.apk)
 [![JetQuotes](https://img.shields.io/badge/JetQuotes🔖-Windows-blue.svg?style=for-the-badge&logo=android)](https://github.com/Spikeysanju/JetQuotes/releases/download/v1.3.1/jetquotes.apk)
 [![JetQuotes](https://img.shields.io/badge/JetQuotes🔖-Deb-yellow.svg?style=for-the-badge&logo=android)](https://github.com/Spikeysanju/JetQuotes/releases/download/v1.3.1/jetquotes.apk)
+
+<br />
+
+## UI Design 🎨
+
+***Click to View Wiggles app Design from below 👇***
+
+[![JetQuotes-Desktop](https://img.shields.io/badge/JetQuotes-FIGMA-black.svg?style=for-the-badge&logo=figma)](https://www.figma.com/file/zJCzEXyjvdvxxq5Ad91FY7/?node-id=1%3A3)
+
+<br />
 
 
 ## Built With 🛠
@@ -29,17 +42,14 @@ Desktop. *Made with love ❤️ by [Spikeysanju](https://github.com/Spikeysanju)
 - [Figma](https://figma.com/) - Figma is a vector graphics editor and prototyping tool which is
   primarily web-based.
 
-## Architecture 🗼
-
-This app uses [***MVVM (Model View
-View-Model)***](https://developer.android.com/jetpack/docs/guide#recommended-app-arch) architecture.
-
-![](https://github.com/TheCodeMonks/Notes-App/blob/master/screenshots/ANDROID%20ROOM%20DB%20DIAGRAM.jpg)
+<br />
 
 ## Contribute 🤝
 
 If you want to contribute to this library, you're always welcome!
 See [Contributing Guidelines](https://github.com/Spikeysanju/JetQuotes/blob/master/CONTRIBUTION.md).
+
+<br />
 
 ## Contact 📩
 
@@ -47,6 +57,8 @@ Have an project? or Questions?
 DM me at 👇
 * Twitter: <a href="https://twitter.com/sanjay_spikey" target="_blank">@spikeysanju</a>
 * Email: spikeysanju98@gmail.com
+
+<br />
 
 ## Donation 💰
 

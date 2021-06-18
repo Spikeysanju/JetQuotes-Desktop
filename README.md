@@ -1,4 +1,4 @@
-![GitHub Cards Preview](https://github.com/Spikeysanju/JetQuotes/blob/master/art/jetquotes_preview_card.png)
+![GitHub Cards Preview](https://github.com/Spikeysanju/JetQuotes-Desktop/blob/master/art/JETQUOTES%20CARD.png)
 
 
 # 🔖 JetQuotes 

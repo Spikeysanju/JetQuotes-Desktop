@@ -1,4 +1,4 @@
-package components
+package dev.spikeysanju.jetquotes.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -23,10 +23,10 @@ import androidx.compose.ui.res.vectorXmlResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import model.QuoteItem
-import ui.R
-import ui.typography
-import utils.copyToClipboard
+import dev.spikeysanju.jetquotes.model.QuoteItem
+import dev.spikeysanju.jetquotes.ui.R
+import dev.spikeysanju.jetquotes.ui.typography
+import dev.spikeysanju.jetquotes.utils.copyToClipboard
 import viewmodel.MainViewModel
 
 @Composable

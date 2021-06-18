@@ -1,4 +1,4 @@
-package utils
+package dev.spikeysanju.jetquotes.utils
 
 import java.awt.Toolkit
 import java.awt.datatransfer.StringSelection

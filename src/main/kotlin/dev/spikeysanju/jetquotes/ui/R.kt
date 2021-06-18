@@ -1,4 +1,4 @@
-package ui
+package dev.spikeysanju.jetquotes.ui
 
 import androidx.compose.ui.graphics.Color
 

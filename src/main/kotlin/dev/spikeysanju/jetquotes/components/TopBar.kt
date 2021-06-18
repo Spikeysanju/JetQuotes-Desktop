@@ -1,4 +1,4 @@
-package components
+package dev.spikeysanju.jetquotes.components
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -16,8 +16,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.vectorXmlResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import ui.R
-import ui.typography
+import dev.spikeysanju.jetquotes.ui.R
+import dev.spikeysanju.jetquotes.ui.typography
 
 @Composable
 fun TopBar(isDarkTheme: Boolean, onToggle: () -> Unit) {

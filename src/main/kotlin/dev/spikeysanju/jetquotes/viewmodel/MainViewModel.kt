@@ -1,5 +1,6 @@
 package viewmodel
 
+import dev.spikeysanju.jetquotes.utils.ViewState
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -8,7 +9,6 @@ import kotlinx.coroutines.launch
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
 import org.jetbrains.skija.impl.Log
-import utils.ViewState
 import java.io.File
 
 class MainViewModel {

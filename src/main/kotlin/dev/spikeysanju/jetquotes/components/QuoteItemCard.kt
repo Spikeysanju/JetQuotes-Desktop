@@ -1,4 +1,4 @@
-package components
+package dev.spikeysanju.jetquotes.components
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.ExperimentalAnimationApi
@@ -30,9 +30,9 @@ import androidx.compose.ui.input.pointer.pointerMoveFilter
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import model.QuoteItem
-import ui.R
-import ui.typography
+import dev.spikeysanju.jetquotes.model.QuoteItem
+import dev.spikeysanju.jetquotes.ui.R
+import dev.spikeysanju.jetquotes.ui.typography
 
 @OptIn(ExperimentalAnimationApi::class)
 @Composable

@@ -1,4 +1,4 @@
-package components
+package dev.spikeysanju.jetquotes.components
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -14,16 +14,16 @@ import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import ui.typography
+import dev.spikeysanju.jetquotes.ui.typography
 
 @Composable
 fun LabelView(title: String) {
-        Text(
-            text = title,
-            style = typography.caption,
-            textAlign = TextAlign.Start,
-            color = colors.onPrimary
-        )
+    Text(
+        text = title,
+        style = typography.caption,
+        textAlign = TextAlign.Start,
+        color = colors.onPrimary
+    )
 }
 
 

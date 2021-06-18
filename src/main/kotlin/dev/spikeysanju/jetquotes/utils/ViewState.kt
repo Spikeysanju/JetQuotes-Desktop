@@ -1,6 +1,6 @@
-package utils
+package dev.spikeysanju.jetquotes.utils
 
-import model.QuoteItem
+import dev.spikeysanju.jetquotes.model.QuoteItem
 
 sealed class ViewState {
     // Represents different states for quotes

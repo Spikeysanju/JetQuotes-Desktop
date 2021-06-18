@@ -1,4 +1,4 @@
-package components
+package dev.spikeysanju.jetquotes.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -22,8 +22,8 @@ import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.res.imageResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import ui.R
-import ui.typography
+import dev.spikeysanju.jetquotes.ui.R
+import dev.spikeysanju.jetquotes.ui.typography
 
 @Composable
 fun LoadingState() {

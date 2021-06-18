@@ -1,15 +1,15 @@
-package ui
+package dev.spikeysanju.jetquotes.ui
 
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
-import ui.R.color.activeDark
-import ui.R.color.activeLight
-import ui.R.color.black
-import ui.R.color.paleBlack
-import ui.R.color.paleWhite
-import ui.R.color.white
+import dev.spikeysanju.jetquotes.ui.R.color.activeDark
+import dev.spikeysanju.jetquotes.ui.R.color.activeLight
+import dev.spikeysanju.jetquotes.ui.R.color.black
+import dev.spikeysanju.jetquotes.ui.R.color.paleBlack
+import dev.spikeysanju.jetquotes.ui.R.color.paleWhite
+import dev.spikeysanju.jetquotes.ui.R.color.white
 
 
 private val DarkColorPalette = darkColors(

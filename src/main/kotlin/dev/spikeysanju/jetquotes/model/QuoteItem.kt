@@ -1,4 +1,4 @@
-package model
+package dev.spikeysanju.jetquotes.model
 
 import kotlinx.serialization.Serializable
 

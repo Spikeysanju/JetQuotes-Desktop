@@ -1,4 +1,4 @@
-package view
+package dev.spikeysanju.jetquotes.view
 
 import androidx.compose.desktop.Window
 import androidx.compose.foundation.ExperimentalFoundationApi
@@ -25,15 +25,15 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.imageResource
 import androidx.compose.ui.unit.dp
-import components.EmptyState
-import components.InputTextField
-import components.LoadingState
-import components.QuoteItemCard
-import components.TopBar
-import ui.JetQuotesTheme
-import ui.R
-import utils.ViewState
-import utils.copyToClipboard
+import dev.spikeysanju.jetquotes.components.EmptyState
+import dev.spikeysanju.jetquotes.components.InputTextField
+import dev.spikeysanju.jetquotes.components.LoadingState
+import dev.spikeysanju.jetquotes.components.QuoteItemCard
+import dev.spikeysanju.jetquotes.components.TopBar
+import dev.spikeysanju.jetquotes.ui.JetQuotesTheme
+import dev.spikeysanju.jetquotes.ui.R
+import dev.spikeysanju.jetquotes.utils.ViewState
+import dev.spikeysanju.jetquotes.utils.copyToClipboard
 import viewmodel.MainViewModel
 import java.awt.image.BufferedImage
 import javax.imageio.ImageIO
@@ -129,11 +129,7 @@ fun QuotesList(isDarkTheme: Boolean, onToggle: () -> Unit) {
                 // vertical end scrollbar
                 VerticalScrollbar(
                     modifier = Modifier.align(Alignment.CenterEnd).fillMaxHeight(),
-                    adapter = rememberScrollbarAdapter(
-                        listState,
-                        result.quote.size,
-                        12.dp
-                    )
+                    adapter = rememberScrollbarAdapter(listState)
                 )
             }
 

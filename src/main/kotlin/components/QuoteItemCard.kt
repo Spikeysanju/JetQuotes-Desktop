@@ -38,7 +38,6 @@ import ui.typography
 @Composable
 fun QuoteItemCard(quote: QuoteItem, onClick: () -> Unit) {
     var onHover by remember { mutableStateOf(false) }
-
     Box(
         modifier = Modifier.fillMaxWidth().wrapContentHeight()
             .pointerMoveFilter(

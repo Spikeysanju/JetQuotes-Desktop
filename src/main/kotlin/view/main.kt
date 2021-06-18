@@ -1,3 +1,5 @@
+package view
+
 import androidx.compose.desktop.Window
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.VerticalScrollbar
@@ -8,7 +10,6 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
@@ -23,15 +24,14 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.imageResource
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import components.EmptyState
 import components.InputTextField
 import components.LoadingState
 import components.QuoteItemCard
+import components.TopBar
 import ui.JetQuotesTheme
 import ui.R
-import ui.typography
 import utils.ViewState
 import utils.copyToClipboard
 import viewmodel.MainViewModel
@@ -39,25 +39,31 @@ import java.awt.image.BufferedImage
 import javax.imageio.ImageIO
 
 fun main() = Window(title = R.string.APP_NAME, resizable = true, icon = getAppIcon()) {
-    JetQuotesTheme(darkTheme = false) {
+    val darkTheme = remember { mutableStateOf(false) }
+    JetQuotesTheme(darkTheme = darkTheme.value) {
         Box(modifier = Modifier.fillMaxSize().background(MaterialTheme.colors.primary)) {
-            QuotesList()
+            QuotesList(darkTheme.value, onToggle = {
+                darkTheme.value = !darkTheme.value
+            })
         }
     }
 }
 
 @OptIn(ExperimentalFoundationApi::class, androidx.compose.ui.ExperimentalComposeUiApi::class)
 @Composable
-fun QuotesList() {
+fun QuotesList(isDarkTheme: Boolean, onToggle: () -> Unit) {
+
+    // States
     val listState = rememberLazyListState()
-    val viewModel = MainViewModel()
-    val scope = rememberCoroutineScope()
     val search = remember { mutableStateOf("") }
+    val scope = rememberCoroutineScope()
 
     // init viewModel
+    val viewModel = MainViewModel()
     viewModel.init(scope = scope)
     viewModel.getAllQuotes()
 
+    // Observe quotes
     when (val result = viewModel.uiState.collectAsState().value) {
         ViewState.Empty -> {
 
@@ -86,17 +92,12 @@ fun QuotesList() {
                     contentPadding = PaddingValues(start = 40.dp)
                 ) {
 
-                    // application title
+                    // TobBar
                     item {
-                        Text(
-                            R.string.APP_NAME,
-                            style = typography.h4,
-                            textAlign = TextAlign.Start,
-                            color = MaterialTheme.colors.onPrimary,
-                            modifier = Modifier.padding(top = 24.dp, bottom = 24.dp)
-                        )
+                        TopBar(onToggle = {
+                            onToggle()
+                        }, isDarkTheme = isDarkTheme)
                     }
-
 
                     // Search input field
                     item {

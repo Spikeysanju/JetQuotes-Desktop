@@ -29,6 +29,7 @@ Desktop. *Made with love ❤️ by [Spikeysanju](https://github.com/Spikeysanju)
 
 - [Kotlin](https://kotlinlang.org/) - First class and official programming language for Android
   development.
+- [Kotlin Serialization](https://kotlinlang.org/docs/serialization.html) - kotlinx.serialization provides sets of libraries for all supported platforms – JVM, JavaScript, Native – and for various serialization formats – JSON, CBOR, protocol buffers, and others.
 - [Compose Desktop](https://github.com/jetbrains/compose-jb) - Jetpack Compose is Android’s
   modern toolkit for building native UI.
 - [Coroutines](https://kotlinlang.org/docs/reference/coroutines-overview.html) - A coroutine is a

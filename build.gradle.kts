@@ -31,12 +31,6 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.3")
     testImplementation(compose("org.jetbrains.compose.ui:ui-test-junit4"))
 
-    // Dagger : A fast dependency injector for Android and Java.
-    api("com.google.dagger:dagger:$daggerVersion")
-    kapt("com.google.dagger:dagger-compiler:$daggerVersion")
-    kapt("com.google.dagger:dagger:$daggerVersion")
-    kaptTest("com.google.dagger:dagger-compiler:$daggerVersion")
-
     //Decompose
     implementation("com.arkivanov.decompose:decompose:$decomposeVersion")
     // Decompose Extension

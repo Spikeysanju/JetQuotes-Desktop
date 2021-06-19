@@ -1,6 +1,5 @@
 package dev.spikeysanju.jetquotes.viewmodel
 
-import dev.spikeysanju.jetquotes.repo.UIModeRepo
 import dev.spikeysanju.jetquotes.utils.ViewState
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -11,9 +10,8 @@ import kotlinx.coroutines.launch
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
 import java.io.File
-import javax.inject.Inject
 
-class MainViewModel @Inject constructor(private val repo: UIModeRepo) {
+class MainViewModel {
 
     // Backing property to avoid state updates from other classes
     private val _uiState = MutableStateFlow<ViewState>(ViewState.Loading)
@@ -59,18 +57,5 @@ class MainViewModel @Inject constructor(private val repo: UIModeRepo) {
             _uiState.value = ViewState.Error(e.message ?: "Something went wrong")
         }
     }
-
-
-    /**
-     * To store UI Mode Preference
-     */
-    fun storeUIMode(isDarkTheme: Boolean) = viewModelScope.launch {
-        repo.storeUIMode(isDarkTheme)
-    }
-
-    /**
-     * To get UI Mode Preference
-     */
-    fun getUIMode(): Boolean = repo.getUIMode()
 
 }

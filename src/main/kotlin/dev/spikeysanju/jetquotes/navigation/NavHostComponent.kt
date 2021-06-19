@@ -7,18 +7,15 @@ import com.arkivanov.decompose.extensions.compose.jetbrains.Children
 import com.arkivanov.decompose.extensions.compose.jetbrains.animation.child.crossfadeScale
 import com.arkivanov.decompose.replaceCurrent
 import com.arkivanov.decompose.router
-import dev.spikeysanju.jetquotes.di.AppComponent
-import dev.spikeysanju.jetquotes.di.DaggerAppComponent
 import dev.spikeysanju.jetquotes.view.quotes.QuotesScreenComponent
 import dev.spikeysanju.jetquotes.view.splash.SplashScreenComponent
 
 class NavHostComponent(private val componentContext: ComponentContext) : Component,
     ComponentContext by componentContext {
 
-    private val appComponent: AppComponent = DaggerAppComponent.create()
 
     /**
-     * Configure Router Engine
+     * Configure Initial Router Engine
      */
     private val router = router<Screen, Component>(
         initialConfiguration = Screen.Splash,
@@ -27,17 +24,15 @@ class NavHostComponent(private val componentContext: ComponentContext) : Compone
 
 
     /**
-     * When a new navigation request made, the screen will be created by this method.
+     * When navigation request defined it will be redirected to specific screen below
      */
     private fun createScreenComponent(screen: Screen, componentContext: ComponentContext): Component {
         return when (screen) {
             is Screen.Splash -> SplashScreenComponent(
-                appComponent = appComponent,
                 componentContext = componentContext,
                 onSplashFinished = ::onSplashFinished,
             )
             Screen.Quotes -> QuotesScreenComponent(
-                appComponent = appComponent,
                 componentContext = componentContext,
                 isDarkTheme = false
             )

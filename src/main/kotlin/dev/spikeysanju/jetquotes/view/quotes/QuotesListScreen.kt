@@ -72,7 +72,7 @@ fun QuotesListScreen(viewModel: MainViewModel, isDarkTheme: Boolean) {
                     // TobBar
                     item {
                         TopBar(onToggle = {
-                            viewModel.storeUIMode(isDarkTheme)
+
                         }, isDarkTheme = isDarkTheme)
                     }
 

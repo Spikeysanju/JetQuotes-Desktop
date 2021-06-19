@@ -1,35 +1,37 @@
-package viewmodel
+package dev.spikeysanju.jetquotes.viewmodel
 
+import dev.spikeysanju.jetquotes.repo.UIModeRepo
 import dev.spikeysanju.jetquotes.utils.ViewState
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
-import org.jetbrains.skija.impl.Log
 import java.io.File
+import javax.inject.Inject
 
-class MainViewModel {
+class MainViewModel @Inject constructor(private val repo: UIModeRepo) {
 
     // Backing property to avoid state updates from other classes
     private val _uiState = MutableStateFlow<ViewState>(ViewState.Loading)
+    private val _splash = MutableStateFlow<Boolean>(false)
+
 
     // UI collects from this StateFlow to get it's state update
     val uiState = _uiState.asStateFlow()
+    val splash = _splash.asStateFlow()
 
     private lateinit var viewModelScope: CoroutineScope
     fun init(scope: CoroutineScope) {
         this.viewModelScope = scope
     }
 
-    /**
-     * To tell viewModel about empty search
-     */
-    fun emptySearch() = viewModelScope.launch(Dispatchers.IO) {
-        _uiState.value = ViewState.Empty
-        Log.info("Empty search!")
+    fun startSplashScreen() = viewModelScope.launch {
+        delay(3000)
+        _splash.value = true
     }
 
     /**
@@ -57,4 +59,18 @@ class MainViewModel {
             _uiState.value = ViewState.Error(e.message ?: "Something went wrong")
         }
     }
+
+
+    /**
+     * To store UI Mode Preference
+     */
+    fun storeUIMode(isDarkTheme: Boolean) = viewModelScope.launch {
+        repo.storeUIMode(isDarkTheme)
+    }
+
+    /**
+     * To get UI Mode Preference
+     */
+    fun getUIMode(): Boolean = repo.getUIMode()
+
 }

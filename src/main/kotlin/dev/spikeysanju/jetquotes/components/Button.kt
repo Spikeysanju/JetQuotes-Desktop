@@ -27,7 +27,7 @@ import dev.spikeysanju.jetquotes.model.QuoteItem
 import dev.spikeysanju.jetquotes.ui.R
 import dev.spikeysanju.jetquotes.ui.typography
 import dev.spikeysanju.jetquotes.utils.copyToClipboard
-import viewmodel.MainViewModel
+import dev.spikeysanju.jetquotes.viewmodel.MainViewModel
 
 @Composable
 fun PrimaryButton(icon: ImageVector, name: String, contentDescription: String, onClick: () -> Unit) {

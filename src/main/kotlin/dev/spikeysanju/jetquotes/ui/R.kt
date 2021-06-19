@@ -26,5 +26,6 @@ object R {
         const val EMPTY_DESCRIPTION = "Explore more and add some quotes!"
         const val BACK_TO_HOME = "Back to home"
         const val EMPTY_STATE = "Empty"
+        const val APP_LOGO = "JetQuotes Logo"
     }
 }

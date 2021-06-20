@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel target="11" />
+    <option name="BUILD_PROCESS_HEAP_SIZE" value="1000" />
+    <bytecodeTargetLevel target="15" />
   </component>
 </project>

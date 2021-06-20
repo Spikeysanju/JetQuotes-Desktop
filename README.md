@@ -47,6 +47,7 @@ love ❤️ by [Spikeysanju](https://github.com/Spikeysanju)*
 - [Kotlin Serialization](https://kotlinlang.org/docs/serialization.html) - kotlinx.serialization provides sets of libraries for all supported platforms – JVM, JavaScript, Native – and for various serialization formats – JSON, CBOR, protocol buffers, and others.
 - [Compose Desktop](https://github.com/jetbrains/compose-jb) - Jetpack Compose is Android’s
   modern toolkit for building native UI.
+- [Decompose](https://github.com/arkivanov/Decompose) - Kotlin Multiplatform lifecycle-aware business logic components (aka BLoCs) with routing functionality and pluggable UI (Jetpack Compose, SwiftUI, JS React, etc.), inspired by Badoos RIBs fork of the Uber RIBs framework
 - [Coroutines](https://kotlinlang.org/docs/reference/coroutines-overview.html) - A coroutine is a
   concurrency design pattern that you can use on Android to simplify code that executes
   asynchronously.

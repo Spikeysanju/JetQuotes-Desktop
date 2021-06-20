@@ -48,6 +48,23 @@ compose.desktop {
             targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
             packageName = "JetQuotes"
             packageVersion = "1.0.0"
+            description = "\uD83D\uDD16 A Quotes Application built to Demonstrate the Compose for Desktop UI"
+            copyright = "© 2021 Spikey Sanju. All rights reserved."
+            vendor = "Spikey Sanju"
+
+            val iconsRoot = project.file("src/main/resources/drawable")
+
+            linux {
+                iconFile.set(iconsRoot.resolve("launchericons/ic_jetquotes.png"))
+            }
+
+            windows {
+                iconFile.set(iconsRoot.resolve("launchericons/ic_jequotes.ico"))
+            }
+
+            macOS {
+                iconFile.set(iconsRoot.resolve("launchericons/ic_jetquotes.icns"))
+            }
         }
     }
 }

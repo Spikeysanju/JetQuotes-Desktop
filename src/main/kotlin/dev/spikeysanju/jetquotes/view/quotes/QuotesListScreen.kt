@@ -12,17 +12,15 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.rememberScrollbarAdapter
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.imageResource
 import androidx.compose.ui.unit.dp
 import dev.spikeysanju.jetquotes.components.EmptyState
+import dev.spikeysanju.jetquotes.components.ErrorState
 import dev.spikeysanju.jetquotes.components.InputTextField
 import dev.spikeysanju.jetquotes.components.LoadingState
 import dev.spikeysanju.jetquotes.components.QuoteItemCard
@@ -34,7 +32,7 @@ import dev.spikeysanju.jetquotes.viewmodel.MainViewModel
 
 @OptIn(ExperimentalFoundationApi::class, androidx.compose.ui.ExperimentalComposeUiApi::class)
 @Composable
-fun QuotesListScreen(viewModel: MainViewModel, isDarkTheme: Boolean) {
+fun QuotesListScreen(viewModel: MainViewModel) {
 
     // States
     val listState = rememberLazyListState()
@@ -43,7 +41,6 @@ fun QuotesListScreen(viewModel: MainViewModel, isDarkTheme: Boolean) {
     // Observe quotes
     when (val result = viewModel.uiState.collectAsState().value) {
         ViewState.Empty -> {
-
             EmptyState(
                 onActionClick = {
                     // go back to home
@@ -51,16 +48,23 @@ fun QuotesListScreen(viewModel: MainViewModel, isDarkTheme: Boolean) {
                 },
                 title = R.string.EMPTY_TITLE,
                 description = R.string.EMPTY_DESCRIPTION,
-                image = imageResource("drawable/empty_state.png"),
+                image = "drawable/ic_empty.xml",
                 actionName = R.string.BACK_TO_HOME
             )
         }
+
         is ViewState.Error -> {
-            Text("Error", color = MaterialTheme.colors.onPrimary)
+            ErrorState(
+                title = R.string.ERROR_TITLE,
+                description = result.exception,
+                image = "drawable/ic_error.xml"
+            )
         }
+
         ViewState.Loading -> {
             LoadingState()
         }
+
         is ViewState.Success -> {
             Box {
                 LazyColumn(
@@ -71,9 +75,7 @@ fun QuotesListScreen(viewModel: MainViewModel, isDarkTheme: Boolean) {
 
                     // TobBar
                     item {
-                        TopBar(onToggle = {
-
-                        }, isDarkTheme = isDarkTheme)
+                        TopBar()
                     }
 
                     // Search input field

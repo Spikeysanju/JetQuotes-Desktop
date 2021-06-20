@@ -9,7 +9,6 @@ import dev.spikeysanju.jetquotes.viewmodel.MainViewModel
 
 class QuotesScreenComponent(
     componentContext: ComponentContext,
-    private val isDarkTheme: Boolean,
 ) : Component {
 
     var viewModel: MainViewModel = MainViewModel()
@@ -23,7 +22,7 @@ class QuotesScreenComponent(
             viewModel.getAllQuotes()
         }
 
-        QuotesListScreen(viewModel, isDarkTheme = isDarkTheme)
+        QuotesListScreen(viewModel)
 
     }
 

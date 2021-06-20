@@ -10,13 +10,13 @@ Desktop. *Made with love ❤️ by [Spikeysanju](https://github.com/Spikeysanju)
 
 ***Try latest JetQuotes App from below 👇***
 
-[![JetQuotes](https://img.shields.io/badge/JetQuotes🔖-MacOS-black.svg?style=for-the-badge&logo=android)](https://github.com/Spikeysanju/JetQuotes/releases/download/v1.3.1/jetquotes.apk)
-[![JetQuotes](https://img.shields.io/badge/JetQuotes🔖-Windows-blue.svg?style=for-the-badge&logo=android)](https://github.com/Spikeysanju/JetQuotes/releases/download/v1.3.1/jetquotes.apk)
-[![JetQuotes](https://img.shields.io/badge/JetQuotes🔖-Deb-yellow.svg?style=for-the-badge&logo=android)](https://github.com/Spikeysanju/JetQuotes/releases/download/v1.3.1/jetquotes.apk)
+[![JetQuotes](https://img.shields.io/badge/JetQuotes-MacOS-black.svg?style=for-the-badge&logo=apple)](https://github.com/Spikeysanju/JetQuotes/releases/download/v1.3.1/jetquotes.apk)
+[![JetQuotes](https://img.shields.io/badge/JetQuotes-Windows-blue.svg?style=for-the-badge&logo=windows)](https://github.com/Spikeysanju/JetQuotes/releases/download/v1.3.1/jetquotes.apk)
+[![JetQuotes](https://img.shields.io/badge/JetQuotes-Deb-yellow.svg?style=for-the-badge&logo=linux)](https://github.com/Spikeysanju/JetQuotes/releases/download/v1.3.1/jetquotes.apk)
 
 <br />
 
-## UI Design 🎨
+## 🎨 UI Design
 
 ***Click to View Wiggles app Design from below 👇***
 
@@ -24,8 +24,7 @@ Desktop. *Made with love ❤️ by [Spikeysanju](https://github.com/Spikeysanju)
 
 <br />
 
-
-## Built With 🛠
+## 🛠 Built With
 
 - [Kotlin](https://kotlinlang.org/) - First class and official programming language for Android
   development.
@@ -45,14 +44,14 @@ Desktop. *Made with love ❤️ by [Spikeysanju](https://github.com/Spikeysanju)
 
 <br />
 
-## Contribute 🤝
+## 🤝 Contributing
 
 If you want to contribute to this library, you're always welcome!
-See [Contributing Guidelines](https://github.com/Spikeysanju/JetQuotes/blob/master/CONTRIBUTION.md).
+See [Contributing Guidelines](https://github.com/Spikeysanju/JetQuotes-Desktop/blob/master/CONTRIBUTING.md).
 
 <br />
 
-## Contact 📩
+## 📩 Contact
 
 Have an project? or Questions?
 DM me at 👇
@@ -61,22 +60,26 @@ DM me at 👇
 
 <br />
 
-## Donation 💰
+## ❤️ Like my work? Show your support 😇
 
 If this project help you reduce time to develop, you can give me a cup of coffee :)
 
-<a href="https://www.buymeacoffee.com/Li0hsl4" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/yellow_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
+<a href="https://www.buymeacoffee.com/Li0hsl4" target="_blank">
+    <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" width="160">
+</a>
 
+<a href="https://www.patreon.com/spikeysanju" target="_blank">
+  <img alt="Patron Link" src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" width="160"/>
 <br>
 
-## Credits 🤗
+## 🤗 Credits
 
 - 🤓 Icons are from [tablericons.com](https://tablericons.com)
 - 📚 Special thanks for [@theapache64](https://github.com/theapache64) for his [Stackzy](https://github.com/theapache64/stackzy) application
 
 <br />
 
-## License 🔖
+## 🔖 License
 
 ```
 MIT License

@@ -18,8 +18,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.ImageBitmap
-import androidx.compose.ui.res.imageResource
+import androidx.compose.ui.res.vectorXmlResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import dev.spikeysanju.jetquotes.ui.R
@@ -33,14 +32,14 @@ fun LoadingState() {
 }
 
 @Composable
-fun EmptyState(title: String, description: String, image: ImageBitmap, actionName: String, onActionClick: () -> Unit) {
+fun EmptyState(title: String, description: String, image: String, actionName: String, onActionClick: () -> Unit) {
     Column(
         modifier = Modifier
             .fillMaxSize()
             .background(color = MaterialTheme.colors.onPrimary)
             .wrapContentSize(Alignment.Center), horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        EmptyStateImage()
+        ContentImage(image)
         Text(
             text = title,
             modifier = Modifier.fillMaxWidth(),
@@ -69,6 +68,34 @@ fun EmptyState(title: String, description: String, image: ImageBitmap, actionNam
 
 
 @Composable
-fun EmptyStateImage() {
-    Image(imageResource("drawable/empty_state.png"), R.string.EMPTY_STATE, modifier = Modifier.size(300.dp))
+fun ContentImage(image: String) {
+    Image(vectorXmlResource(image), R.string.EMPTY_STATE, modifier = Modifier.size(300.dp))
+}
+
+
+@Composable
+fun ErrorState(title: String, description: String, image: String) {
+    Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+
+        Column {
+            ContentImage(image)
+
+            Text(
+                text = title,
+                modifier = Modifier.fillMaxWidth(),
+                style = typography.h6,
+                textAlign = TextAlign.Center
+            )
+
+            Spacer(modifier = Modifier.height(8.dp))
+
+            Text(
+                text = description,
+                modifier = Modifier.fillMaxWidth(),
+                style = typography.body2,
+                textAlign = TextAlign.Center,
+                color = MaterialTheme.colors.onPrimary.copy(.7f)
+            )
+        }
+    }
 }

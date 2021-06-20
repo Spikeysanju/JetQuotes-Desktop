@@ -15,7 +15,7 @@ class NavHostComponent(private val componentContext: ComponentContext) : Compone
 
 
     /**
-     * Configure Initial Router Engine
+     * Configure Router Engine Initial Screen
      */
     private val router = router<Screen, Component>(
         initialConfiguration = Screen.Splash,
@@ -33,8 +33,7 @@ class NavHostComponent(private val componentContext: ComponentContext) : Compone
                 onSplashFinished = ::onSplashFinished,
             )
             Screen.Quotes -> QuotesScreenComponent(
-                componentContext = componentContext,
-                isDarkTheme = false
+                componentContext = componentContext
             )
         }
     }

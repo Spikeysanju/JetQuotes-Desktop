@@ -38,7 +38,10 @@ dependencies {
 }
 
 tasks.withType<KotlinCompile> {
-    kotlinOptions.jvmTarget = "15"
+    kotlinOptions.jvmTarget = "11"
+    kotlinOptions.freeCompilerArgs += "-Xuse-experimental=androidx.compose.foundation.ExperimentalFoundationApi"
+    kotlinOptions.freeCompilerArgs += "-Xuse-experimental=androidx.compose.ui.ExperimentalComposeUiApi"
+    kotlinOptions.freeCompilerArgs += "-Xuse-experimental=kotlin.io.path.ExperimentalPathApi"
 }
 
 compose.desktop {
@@ -48,9 +51,9 @@ compose.desktop {
             targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
             packageName = "JetQuotes"
             packageVersion = "1.0.0"
-            description = "\uD83D\uDD16 A Quotes Application built to Demonstrate the Compose for Desktop UI"
-            copyright = "© 2021 Spikey Sanju. All rights reserved."
-            vendor = "Spikey Sanju"
+//            description = "A Quotes Application built to Demonstrate the Compose for Desktop UI"
+//            copyright = "© 2021 Spikey Sanju. All rights reserved."
+//            vendor = "Spikey Sanju"
 
             val iconsRoot = project.file("src/main/resources/drawable")
 
@@ -59,7 +62,10 @@ compose.desktop {
             }
 
             windows {
-                iconFile.set(iconsRoot.resolve("launchericons/ic_jequotes.ico"))
+                iconFile.set(iconsRoot.resolve("launchericons/ic_jetquotes.ico"))
+                upgradeUuid = "7c4b7fa1-6b40-4de6-86b5-53972976f6b7"
+                menuGroup = packageName
+                perUserInstall = true
             }
 
             macOS {
@@ -67,4 +73,9 @@ compose.desktop {
             }
         }
     }
+}
+
+val compileKotlin: KotlinCompile by tasks
+compileKotlin.kotlinOptions {
+    jvmTarget = JavaVersion.VERSION_11.toString()
 }

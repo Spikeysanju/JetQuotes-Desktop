@@ -9,7 +9,7 @@ love ❤️ by [Spikeysanju](https://github.com/Spikeysanju)*
 
 # 📸 Application Preview
 
-![](https://github.com/Spikeysanju/JetQuotes-Desktop/blob/master/art/JetQuotes-Demo.gif)
+![](https://github.com/Spikeysanju/JetQuotes-Desktop/master/art/JetQuotes-Demo.gif)
 
 ***Try latest JetQuotes App from below 👇***
 

@@ -1,18 +1,34 @@
 ![GitHub Cards Preview](https://github.com/Spikeysanju/JetQuotes-Desktop/blob/master/art/JETQUOTES%20CARD.png)
 
+# 🔖 JetQuotes
 
-# 🔖 JetQuotes 
-A Quotes Application built to Demonstrate the use of Jetpack Compose for building declarative UI in
-Desktop. *Made with love ❤️ by [Spikeysanju](https://github.com/Spikeysanju)*
+A Quotes Application built to Demonstrate the use of Jetpack Compose for building declarative UI in Desktop. *Made with
+love ❤️ by [Spikeysanju](https://github.com/Spikeysanju)*
 
 <br />
 
+# 📸 Application Preview
+
+![](https://github.com/Spikeysanju/JetQuotes-Desktop/blob/master/art/JetQuotes-Demo.gif)
 
 ***Try latest JetQuotes App from below 👇***
 
-[![JetQuotes](https://img.shields.io/badge/JetQuotes-MacOS-black.svg?style=for-the-badge&logo=apple)](https://github.com/Spikeysanju/JetQuotes/releases/download/v1.3.1/jetquotes.apk)
-[![JetQuotes](https://img.shields.io/badge/JetQuotes-Windows-blue.svg?style=for-the-badge&logo=windows)](https://github.com/Spikeysanju/JetQuotes/releases/download/v1.3.1/jetquotes.apk)
-[![JetQuotes](https://img.shields.io/badge/JetQuotes-Deb-yellow.svg?style=for-the-badge&logo=linux)](https://github.com/Spikeysanju/JetQuotes/releases/download/v1.3.1/jetquotes.apk)
+[![JetQuotes](https://img.shields.io/badge/JetQuotes-MacOS✅-black.svg?style=for-the-badge&logo=apple)](https://github.com/Spikeysanju/JetQuotes-Desktop/releases/download/v1.0.0/JetQuotes-1.0.0.dmg)
+[![JetQuotes](https://img.shields.io/badge/JetQuotes-Windows[WIP]-blue.svg?style=for-the-badge&logo=windows)](https://github.com/Spikeysanju/JetQuotes/releases/download/v1.3.1/jetquotes.apk)
+[![JetQuotes](https://img.shields.io/badge/JetQuotes-Deb[WIP]-yellow.svg?style=for-the-badge&logo=linux)](https://github.com/Spikeysanju/JetQuotes/releases/download/v1.3.1/jetquotes.apk)
+
+<br />
+
+## 📱 Oh do you want to try JetQuotes for Android?. I got you covered 👇
+
+### 🔖 JetQuotes - Android
+
+A Quotes Application built to Demonstrate the use of Jetpack Compose for building declarative UI in Android. *Made with
+love ❤️ by [Spikeysanju](https://github.com/Spikeysanju)*
+
+***Try latest JetQuotes App apk from below 👇***
+
+[![JetQuotes](https://img.shields.io/badge/JetQuotes-APK-black.svg?style=for-the-badge&logo=android)](https://github.com/Spikeysanju/JetQuotes/releases/download/v1.3.1/jetquotes.apk)
 
 <br />
 

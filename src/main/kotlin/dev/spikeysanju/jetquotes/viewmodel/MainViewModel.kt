@@ -37,10 +37,10 @@ class MainViewModel {
      */
     fun getAllQuotes() = viewModelScope.launch(Dispatchers.IO) {
         /* filePath */
-        val quotes = "/Users/spikey/IdeaProjects/JetQuotes-Desktop/src/main/resources/assets/quotes.json"
+        val quotes = this.javaClass.getResource("/assets/quotes.json")
 
         /* reading json file */
-        val quotesJson = File(quotes).readText()
+        val quotesJson = File(quotes!!.path).readText()
 
         /* format json */
         val format = Json {
